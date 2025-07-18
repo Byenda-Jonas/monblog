@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ article.titre }} - Mon Blog{% endblock %}
+
+{% block content %}
+    <div class="article-card">
+        {% if article.image %}
+            <img src="{{ article.image.url }}" alt="Image de l'article" class="article-image">
+        {% endif %}
+
+        <h1>{{ article.titre }}</h1>
+        <p><strong>Auteur :</strong> {{ article.auteur }}</p>
+        <p><strong>Catégorie :</strong> {{ article.categorie }}</p>
+        <p>{{ article.contenu }}</p>
+        <small><em>Publié le {{ article.date_creation|date:"F d, Y, H:i" }}</em></small>
+    </div>
+{% endblock %}

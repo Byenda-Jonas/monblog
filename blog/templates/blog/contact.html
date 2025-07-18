@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Contactez-moi</h2>
+    <form method="post">
+        {% csrf_token %}
+         {% for field in form.visible_fields %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <small style="color: red;">{{ field.errors|striptags }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <!-- Champ honeypot (invisible aux humains) -->
+        <div style="display:none;">
+            {{ form.honeypot }}
+        </div>
+
+        <!-- Champ captcha visible avec style -->
+    <div class="form-group captcha-group">
+              <label for="{{ form.captcha.id_for_label }}">Question anti-spam :</label>
+            {{ form.captcha }}
+            {% if form.captcha.errors %}
+              <small style="color: red;">{{ form.captcha.errors|striptags }}</small>
+            {% endif %}
+        </div>
+        <button type="submit" class="submit-button">Envoyer</button>
+        <script>
+document.querySelectorAll('.submit-button').forEach(button => {
+    button.addEventListener('click', function (e) {
+        const circle = document.createElement('span');
+        circle.classList.add('ripple');
+        this.appendChild(circle);
+        const d = Math.max(this.clientWidth, this.clientHeight);
+        circle.style.width = circle.style.height = d + 'px';
+        const rect = this.getBoundingClientRect();
+        circle.style.left = e.clientX - rect.left - d / 2 + 'px';
+        circle.style.top = e.clientY - rect.top - d / 2 + 'px';
+        setTimeout(() => circle.remove(), 600);
+    });
+});
+</script>
+    </form>
+</div>
+{% endblock %}

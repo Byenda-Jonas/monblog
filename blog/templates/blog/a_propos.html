@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}À propos{% endblock %}
+
+{% block content %}
+<!-- Bouton d'impression -->
+<button onclick="window.print()" class="print-button">🖨️ Imprimer cette page</button>
+<!-- Bouton de téléchargement PDF (utilise aussi window.print) -->
+<button onclick="window.print()" class="download-button" title="Télécharger en PDF">⬇️</button>
+<section class="about-section">
+    <h2>À propos de moi</h2>
+    <p>Je m'appelle <strong>Byenda Jonas</strong>, un passionné d’informatique et de création numérique. Originaire de la République Démocratique du Congo, j’ai toujours été animé par la volonté d’apprendre et de partager ce que je découvre.</p>
+
+    <p>Depuis mon plus jeune âge, j’aime démonter, comprendre et reconstruire ce qui m’entoure — des objets, des idées, des logiciels. C’est ainsi que je suis tombé amoureux du développement web, et que j’ai commencé ce blog. Je crois en un apprentissage simple, accessible et utile pour tous, peu importe le niveau.</p>
+
+    <p>Aujourd’hui, ce blog est mon espace d’expression, un lieu où je partage mes projets, mes idées, et un peu de moi-même.</p>
+
+    <h3>Mon histoire</h3>
+    <p>Il était une fois un jeune homme, quelque part dans la ville de Goma, qui observait silencieusement les écrans lumineux d’un petit cybercafé. Il n’avait pas encore touché un clavier, mais dans son cœur, une passion grandissait : comprendre comment ces machines pensaient, comment ces sites web apparaissaient. Ce jeune garçon s’appelait <strong>Jonas</strong>.</p>
+
+    <p>Chaque jour, entre les cours et les responsabilités, il trouvait un moment pour lire, apprendre, pratiquer sur de vieux ordinateurs ou son propre téléphone. Il n’avait pas toujours accès à Internet, mais il avait une arme plus puissante : <strong>la détermination</strong>.</p>
+
+    <p>Un jour, Jonas créa sa première page HTML. Ce n'était qu’un simple "Bonjour le monde", mais pour lui, c’était une porte ouverte vers un monde infini. Ensuite vinrent CSS, Django, et tout un univers de possibilités.</p>
+
+    <p>Ce blog n’est pas juste une vitrine de code ou d’articles. C’est le reflet d’un <strong>parcours courageux</strong>, celui d’un autodidacte qui a compris que la meilleure façon de briller, c’est d’éclairer les autres.</p>
+     <!-- Remerciement -->
+    <p style="font-weight: bold; font-size: 20px; color: #0077cc; margin-top: 30px;">
+        Merci d’être ici. Ce blog existe aussi grâce à vous. <strong>CARPE DIEM !</strong> ✨
+    </p>
+</section>
+ <!-- Citation -->
+    <blockquote style="font-style: italic; color: #444; margin: 20px 0;">
+        « Le savoir est un pouvoir, mais le partager est un acte de sagesse. »
+    </blockquote>
+{% endblock %}
